@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>About Me</title>
+{% endblock title %}
+
+
+{% block css %}
+{% endblock css %}
+
+
+{% block body %}
+<div class="ms-3 text-center rounded-4 text-light " style="background-color:rgb(222, 165, 31);">
+    <h1>About Me</h1>
+</div>
+<!-- image div -->
+<div style="padding: 10px; text-align: center;">
+    <img src="{% static 'image/1.jpg' %}" style="border-radius: 15px;" height="200px" alt="">
+    <p class="display-5 my-2">Ankit Poonia</p>
+    <p>Hey there I'm Ankit Poonia I'm from "Hisar,Haryana".I'm a full stack python developer.I am pursuing BCA from Swami Vivekanand Subharti University.I am flexible, reliable and possess excellent time keeping skills. I am an self-motivated, reliable, responsible and hard working person. I am a mature team worker and adaptable to all challenging situations. I am able to work well both in a team environment as well as using own initiative.For more details check out my resume application sections.</p>
+</div>
+{% endblock body %}

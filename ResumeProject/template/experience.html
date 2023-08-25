@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Experience Page</title>
+{% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<div class="ms-3 text-center rounded-4 text-light " style="background-color:rgb(222, 165, 31);">
+    <h1>Experiences</h1>
+</div>
+
+<div class="container ms-3 bg-light p-3 mt-4 rounded-4 shadow" style="width:98% ;" >
+<table class="table table-light table-hover">
+    
+    <thead>
+        <tr>
+            <th>Languages/Technologys</th>
+            <th>Experience</th>
+        </tr>
+    </thead>
+    {% for key,value in exp.items %}
+    <tbody>
+        <tr>
+            <td>{{key}}</td>
+            <td>{{value}}</td>
+        </tr>
+    </tbody>
+
+    {% endfor %}
+</table>
+</div>
+{% endblock body %}

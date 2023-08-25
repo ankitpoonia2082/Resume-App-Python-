@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Contact Me</title>
+{% endblock title %}
+
+
+{% block css %}
+<style>
+/* a{
+    text-decoration: none;
+    color:white;
+}
+
+#contact,#email,#linkedin{
+    padding:8px ; background-color:rgb(137, 186, 64); border: 0px solid black; border-radius: 5px; margin: 15px;
+} */
+
+#heading{
+    background-color:rgb(222, 165, 31);
+}
+</style>
+{% endblock css %}
+
+
+{% block body %}
+<div class="ms-3 text-center rounded-4 text-light " id="heading">
+    <h1>Contacts</h1>
+</div>
+<!-- <div class=" " style="padding: 170px; border-radius: 17px; color: azure;">
+
+    <h3 id="contact"><img width="30px" src="{% static 'image/telephone.svg'%}" alt=""> Contact no. :  9050427627</h3>
+    <h3 id="email"><img width="30px" src="{% static 'image/envelope.svg'%}" alt=""> Email : <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">apoonia287@gmail.com</a></h3>
+    <h3 id="linkedin"><img width="30px" src="{% static 'image/linkedin.svg'%}" alt=""> LinkedIn : <a href="https://www.linkedin.com/in/ankit-poonia-88a103174/">linkedin.com/in/ankit-poonia-88a103174</a></h3>
+</div> -->
+
+<div class="container ms-2">
+    <form action="{% url 'contact' %}" method="post" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <div class="my-3">
+            <label for="">Enter your name</label>
+            <input type="text" class="form-control" name='name' id="name">
+            <p id="namepera"></p>
+        </div>
+        <div class="my-3">
+            <label for="">Enter your email</label>
+            <input type="email" class="form-control" placeholder="example123@gmail.com" name="email" id="email">
+            <p id="emailpera"></p>
+        </div>
+        <div class="my-3">
+            <label for="">Purpose of contacting</label>
+            <textarea name="purpose" cols="30" rows="10" class="form-control"></textarea>
+            <p id="purposepera"></p>
+        </div>
+        <div class="my-3 text-center">
+            <input type="submit" value="Contact" class="btn btn-success btn-lg">
+        </div>
+    </form>
+</div>
+
+<script>
+
+    function validateForm(){
+        var n = document.getElementById('name')
+        var e = document.getElementsById('email')
+        var p = document.getElementsById('purpose')
+
+        if (n==""){
+            var pe = document.getElementById('namepera');
+            pe.innerHTML='Name is empty';
+            return false;
+    };
+    };
+    
+</script>
+{% endblock body %}

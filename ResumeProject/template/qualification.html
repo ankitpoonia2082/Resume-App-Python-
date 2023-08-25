@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Qualification Page</title>
+{% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<div class="ms-3 text-center rounded-4 text-light " style="background-color:rgb(222, 165, 31);">
+    <h1>Qualifications</h1>
+</div>
+
+<div class="container border rounded-4 mx-4 bg-light shadow text-center mt-4 " style="width:95% ;">
+    <table class="table">
+        <thead>
+            <th>Sr.No.</th>
+            <th>Study/Course</th>
+            <th>Board/University</th>
+            <th>Marks/CGPA</th>
+            <th>Year of passing</th>
+        </thead>
+        <tbody>
+            {% for key,value in study.items %}
+            <tr>
+                {% for k,v in value.items %}
+                <td>{{v}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock body %}

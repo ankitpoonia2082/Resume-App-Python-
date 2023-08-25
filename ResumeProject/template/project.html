@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Projects</title>
+{% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<div class="ms-3 text-center rounded-4 text-light " style="background-color:rgb(222, 165, 31);">
+    <h1>Projects</h1>
+</div>
+<div class="container bg-light rounded-4 shadow m-3" style="width:98%;">
+    <table class="table ">
+        <thead class="text-center table-bordered">
+            <th>Sr.No.</th>
+            <th>Project</th>
+            <th>Languages/Technologys</th>
+            <th>Discription</th>
+        </thead>
+        <tbody class="my-3">
+            {% for key,value in pro.items %}
+            
+            <tr>
+                {% for k,v in value.items %}
+                <td style="text-align:justify;">{{v}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}
